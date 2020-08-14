@@ -131,7 +131,7 @@ server_off () {
     cp /etc/hostapd.conf /etc/hostapd.conf
   fi
 
-  echo "WLANPi will now reboot"
+  echo "WLAN Pi will now reboot"
   echo "classic" > $STATUS_FILE
   sleep 1
   sync
