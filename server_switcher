@@ -67,7 +67,7 @@ server_on () {
     rm /etc/hostapd.conf
   fi
   # Link to server config files
-  echo "Creaing links to config files..."
+  echo "Creating links to config files..."
   ln -s /etc/wlanpiserver/default/isc-dhcp-server /etc/default/isc-dhcp-server
   ln -s /etc/wlanpiserver/dhcp/dhcpd.conf /etc/dhcp/dhcpd.conf
   ln -s /etc/wlanpiserver/network/interfaces /etc/network/interfaces
@@ -128,7 +128,7 @@ server_off () {
   cp /etc/ufw/before.rules.serv /etc/ufw/before.rules
   # This file may or may not exist
   if [ -e /etc/hostapd.conf.serv ]; then
-    cp /etc/hostapd.conf /etc/hostapd.conf
+    cp /etc/hostapd.conf.serv /etc/hostapd.conf
   fi
 
   echo "WLAN Pi will now reboot"
