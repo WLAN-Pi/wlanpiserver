@@ -12,8 +12,9 @@ If you plug a Wi-Fi adapter to its USB port, the WLAN Pi will broadcast wlanpi_s
 
 To use server mode on your WLAN Pi, you will need:
 
- - a supported USB Wi-Fi adapter plugged into the WLAN Pi (e.g. Comfast CF-912AC, adapter with MediaTek MTK7612U chipset)
- - WLAN Pi running release 2.0 or newer
+- WLAN Pi running release 2.0 or newer
+- optionally a supported USB Wi-Fi adapter plugged into the WLAN Pi (e.g. Comfast CF-912AC, adapter with MediaTek MTK7612U chipset) if you wish to access the WLAN Pi and the wired network wirelessly
+
 
 ## Configurations Options
 
