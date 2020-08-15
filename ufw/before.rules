@@ -76,7 +76,7 @@
 # don't delete the 'COMMIT' line or these rules won't be processed
 COMMIT
 
-# NAT rule to nat the Hotspot network behind the Ethernet interface
+# NAT rule to PAT the Wi-Fi network behind the Ethernet interface
 *nat
 :POSTROUTING ACCEPT [0:0]
 -A POSTROUTING -s 192.168.74.0/24 -o eth0 -j MASQUERADE
