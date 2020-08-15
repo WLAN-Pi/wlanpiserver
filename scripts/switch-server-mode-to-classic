@@ -12,6 +12,6 @@ sleep 2
 sed -i '/switch-server-mode-to-classic/d' /etc/rc.local
 
 #Switch mode to classic
-sudo /etc/wlanpiserver/server_switcher off
+sudo /usr/bin/server_switcher off
 
 exit 0
