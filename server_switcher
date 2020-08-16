@@ -81,6 +81,7 @@ server_on () {
   ln -s /etc/wlanpiserver/sysctl/sysctl.conf /etc/sysctl.conf
   ln -s /etc/wlanpiserver/default/ufw /etc/default/ufw
   ln -s /etc/wlanpiserver/ufw/before.rules /etc/ufw/before.rules
+  #Intentionally using wconsole config file
   ln -s /etc/wconsole/conf/ser2net.conf /etc/ser2net.conf
 
   # Open up console ports on FW 
