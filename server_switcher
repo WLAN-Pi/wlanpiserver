@@ -81,7 +81,7 @@ server_on () {
   ln -s /etc/wlanpiserver/sysctl/sysctl.conf /etc/sysctl.conf
   ln -s /etc/wlanpiserver/default/ufw /etc/default/ufw
   ln -s /etc/wlanpiserver/ufw/before.rules /etc/ufw/before.rules
-  ln -s /etc/wlanpiserver/conf/ser2net.conf /etc/ser2net.conf
+  ln -s /etc/wconsole/conf/ser2net.conf /etc/ser2net.conf
 
   # Open up console ports on FW 
   ufw allow 2400:2408/tcp
