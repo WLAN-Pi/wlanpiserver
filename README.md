@@ -5,8 +5,8 @@ The WLAN Pi server mode enables use cases like lab build, software upgrade of yo
 
 If you plug a Wi-Fi adapter to its USB port, the WLAN Pi will broadcast wlanpi_server SSID which makes it easier for you to wirelessly access the wired network.
 
-## A word of caution
-**!!! Server mode enables DHCP server on the wired eth0 interface of the WLAN Pi. Only plug this interface to a network which is under your management. Never connect WLAN Pi in Server mode to a production network. It can distrupt production services !!!**
+## A Word of Caution
+**Server mode enables DHCP server on the wired eth0 interface of the WLAN Pi. Only plug this interface to a network which is under your management. Never connect WLAN Pi in Server mode to a production network. It can distrupt production services !!!**
 
 ## Subnets
 Wired subnet: 192.168.73.0/24
