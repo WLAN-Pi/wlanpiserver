@@ -60,11 +60,11 @@ Next, flip the WLAN Pi in to "Server" mode using the front panel buttons by navi
 
 If you need to make any subsequent alterations to the parameters configured in hostapd.conf, after making your edits, reboot the WLAN Pi so that they take effect.
 
-# Server Mode is Non-persistent
+## Server Mode is Non-persistent
 
 **WLAN Pi will only stay in server mode until you reboot it or remove power source**. At the next boot, it will automatically switch back to its default "Classic" mode. If you need to activate it again, do so by "Menu > Modes > Server > Confirm". This is a safety feature to help you avoid WLAN Pi in server mode (with DHCP server enabled) to be connected to a production network by mistake.
 
-# Using Server Mode
+## Using Server Mode
 
 Following the WLAN Pi reboot, your configured server mode SSID should be available in the network list shown on your wireless client.
 
