@@ -10,6 +10,11 @@ address 192.168.73.1
 netmask 255.255.255.0
 dns-nameservers 8.8.8.8 208.67.222.222
 
+# Wired ethernet
+# For boards with 2 eth ifaces
+allow-hotplug eth1
+iface eth1 inet dhcp
+
 # Wireless adapter #1
 allow-hotplug wlan0
 iface wlan0 inet static

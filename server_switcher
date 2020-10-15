@@ -57,6 +57,9 @@ server_on () {
   if [ -e /etc/ser2net.conf ]; then
     cp /etc/ser2net.conf /etc/ser2net.conf.serv
   fi
+  if [ -e /etc/chrony/chrony.conf ]; then
+    cp /etc/chrony/chrony.conf /etc/chrony/chrony.conf.serv
+  fi
   # Remove existing config files
   echo "Removing existing config files..."
   rm /etc/default/isc-dhcp-server
@@ -72,6 +75,9 @@ server_on () {
   if [ -e /etc/ser2net.conf ]; then
     rm /etc/ser2net.conf
   fi
+  if [ -e /etc/chrony/chrony.conf ]; then
+    rm /etc/chrony/chrony.conf
+  fi
   # Link to server config files
   echo "Creating links to config files..."
   ln -s /etc/wlanpiserver/default/isc-dhcp-server /etc/default/isc-dhcp-server
@@ -81,6 +87,7 @@ server_on () {
   ln -s /etc/wlanpiserver/sysctl/sysctl.conf /etc/sysctl.conf
   ln -s /etc/wlanpiserver/default/ufw /etc/default/ufw
   ln -s /etc/wlanpiserver/ufw/before.rules /etc/ufw/before.rules
+  ln -s /etc/wlanpiserver/conf/chrony.conf /etc/chrony/chrony.conf
   #Intentionally using wconsole config file
   ln -s /etc/wconsole/conf/ser2net.conf /etc/ser2net.conf
 
@@ -92,6 +99,7 @@ server_on () {
   ufw allow 38400:38408/tcp
   ufw allow 11520:11528/tcp
   ufw allow 2000:2008/tcp
+  ufw allow 123/udp
 
   # Signal that wconsole active
   echo "server" > $STATUS_FILE
@@ -134,6 +142,7 @@ server_off () {
   unlink /etc/default/ufw
   unlink /etc/ufw/before.rules
   unlink /etc/ser2net.conf
+  unlink /etc/chrony/chrony.conf
 
   # Restore original config files
   echo "Restoring original config files..."
@@ -150,6 +159,9 @@ server_off () {
   if [ -e /etc/ser2net.conf.serv ]; then
     cp /etc/ser2net.conf.serv /etc/ser2net.conf
   fi
+  if [ -e /etc/chrony/chrony.conf.serv ]; then
+    cp /etc/chrony/chrony.conf.serv /etc/chrony/chrony.conf
+  fi
   
   # Close ports on FW
   ufw delete allow 2400:2408/tcp
@@ -159,6 +171,7 @@ server_off () {
   ufw delete allow 38400:38408/tcp
   ufw delete allow 2000:2008/tcp
   ufw delete allow 11520:11528/tcp
+  ufw delete allow 123/udp
   
   echo "WLAN Pi will now reboot"
   echo "classic" > $STATUS_FILE
